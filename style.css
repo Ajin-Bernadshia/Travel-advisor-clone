@@ -16,6 +16,7 @@ body{
     position: sticky;
     top: 0;
     background-color: white;
+    z-index: 1;
     
     }
     .navbar-s1__title{
@@ -53,6 +54,11 @@ body{
      height: fit-content;
      font-size: 20px;
 }
+.box:hover{
+    background-color: #23996E;
+    color: white;
+    animation: 1s;
+}
 .navbar-s3__signin{
     height: 50%;
     padding-left: 5px;
@@ -64,6 +70,28 @@ body{
     border-radius: 20px;
     cursor: pointer;
 }
+.navbar-s3__signin:hover{
+    background-color: black;
+    color:white;
+    transition: 1s;
+}
+/* signin popup */
+.navbar-s3__signin{
+    position: relative;
+}
+.navbar-s3__signinpopup{
+    position: absolute;
+    background-color: transparent;
+    color: black;
+    width: 100px;
+    top: 30px;
+    right: 10px;
+    display: none;
+    }
+    .navbar-s3__signin:hover .navbar-s3__signinpopup{
+        display: block;
+    }
+
 .catageries{
     display: flex;
     justify-content: space-around;
@@ -78,8 +106,15 @@ body{
     border-style: ridge;
     cursor: pointer;
 }
+.catageries p:hover{
+    transition: 1s;
+    background-color: transparent;
+    color: #23996E;
+
+}
 .saleimage{
     position: relative;
+    
 }
 .saleimage-offer{
     width: 35%;
@@ -92,14 +127,34 @@ body{
     bottom: 250px;
     right: 500px;
     padding: 2%;
+    animation-name: zoom;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+
+    
 }
+@keyframes zoom {
+    0%{
+      transform: scale(0);
+      opacity: 0;
+      
+    }
+    100%{
+      transform: scale(1);
+      opacity: 1;
+    }
+}
+
+
 .saleimage img{
     width: 1300px;
     height: 500px;;
     display: block;
     }
     .recomended{
-        padding: 30px;
+        margin-top: 30px;
+        width: 100%;
     }
     .recomended p{
         padding: 10px;
@@ -119,6 +174,7 @@ body{
     bottom: 20px;
     color: white;
     font-size: 25px;
+    padding: 0px;
 }
 .ratings{
     width: 100%;
@@ -157,6 +213,7 @@ body{
         background-color: bisque;
         padding: 30px;
         color: black;
+        width: 100%;
     }
     .footer p{
         margin: 20px;
@@ -168,14 +225,31 @@ body{
     .footer-two{
         display: flex;
         justify-content: space-between;
-    }
+        }
+        .footer-two img{
+            width: 20%;
+        }
     .footer__app{
         padding: 10px;
     }
-    .footer-two h1{
-        color: #23996E;
-    }
+    
 
+    /* media queries */
+@media screen and (max-width:800px) {
+    body{
+        font-size: 10px;
+    }
+}
+@media  screen and (max-width:600px) {
+    
+    .catageries{
+        display: none;
+    }
+    .navbar-s3{
+        display: none;
+    }
+    
+}
 
 
 
